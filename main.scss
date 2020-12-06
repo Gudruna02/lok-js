@@ -1,0 +1,154 @@
+@mixin desktop {
+    @media (min-width: 830px) {
+        @content;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato&display=swap');
+
+
+body, html {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-image: url('/img/christmas1.jpg');
+}
+
+h1, h2 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+header {
+    text-align: center;
+    background: radial-gradient(ellipse farthest-side at 50% 35%, #ff0000, #00000000);
+    padding-bottom: 7vh;
+    
+
+    @include desktop() {
+        padding-bottom: 100px;
+    }
+    
+    
+
+    h1 {
+        font-size: 10vw;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding-top: 40px;
+        color: #f0f0f0;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    input[type=text] {
+        width: 65vw;
+        height: 30px;
+        font-size: 120%;
+        padding: 0 .75%;
+        background-color: #f0f0f0;
+        border-radius: 13px;
+        border: solid 2px #FFD700;
+        margin: 10px 10px 10px 10px;
+        transition: .75s;
+
+        
+        &:focus {
+            outline: none;
+            border-width: 4px;
+            margin: 10px 10px 6px 10px;
+        }
+
+        @include desktop() {
+            width: 30vw;
+            height: 35px;
+        }
+    }
+}
+
+div#recipe {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80vw;
+
+    @include desktop() {
+        width: 60vw;
+
+        h2 {
+            font-size: 2vw;
+        }
+    }
+
+    ul {
+        list-style: none outside none;
+
+        @include desktop() {
+            padding: 0 8vw;
+            margin: 0 auto;
+            margin-top: 15px;
+        }
+
+        li::before {
+            content: "✶ ";
+            font-weight: 900;
+        }
+    }
+
+    p {
+        margin-bottom: 1.5vh;
+
+        @include desktop() {
+            padding: 0 7.5vw;
+        }
+    }
+
+    h2, h3, h4 {
+        text-align: center;
+        margin: 0;
+    }
+    
+    h3 {
+        margin-bottom: 2vh;
+        font-size: small;
+    }
+
+    h4 {
+        text-align: center;
+        color: #383838;
+
+        &::before {
+            content: "Dagsetning: ";
+        }
+    }
+
+
+    div {
+        background-color: #f0f0f0;
+        border: solid 2px #FFD700;
+        border-radius: 35px;
+        margin-bottom: 7.5vh;
+        padding: 5%;
+
+        @include desktop() {
+            padding: 1.25%;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        min-width: 50%;
+        border-radius: 5px;
+
+        @include desktop() {
+            max-height: 50vh;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    #empty {
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+        color: #f0f0f0;
+    }
+}
